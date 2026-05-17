@@ -461,15 +461,60 @@ let currentTemplateEdit = null;
 let progressChart = null;
 
 const KNOWN_EXERCISES = [
-  'Développé couché', 'Développé incliné', 'Développé décliné', 'Dips', 'Écarté haltères',
-  'Curl biceps', 'Curl marteau', 'Curl concentré',
-  'Squat', 'Leg press', 'Fentes', 'Soulevé de terre', 'Leg curl', 'Leg extension',
-  'Développé militaire', 'Élévation latérale', 'Rowing barre', 'Rowing haltère', 'Traction',
-  'Triceps poulie', 'Extension triceps', 'Kickback triceps',
-  'Calf raise', 'Gainage', 'Crunch', 'Relevé de jambes', 'Deadlift roumain',
-  'Hip thrust', 'Hack squat', 'Romanian Deadlift', 'Pull-up', 'Chin-up',
-  'Face pull', 'Shrugs', 'Curl incliné', 'Chest press machine',
-  'Lat pulldown', 'Seated row', 'Pec deck'
+  // Pectoraux
+  'Développé couché', 'Développé couché haltères', 'Développé incliné', 'Développé incliné haltères',
+  'Développé décliné', 'Développé décliné haltères', 'Dips', 'Écarté haltères', 'Écarté incliné',
+  'Écarté décliné', 'Pec deck', 'Chest press machine', 'Cable crossover', 'Poulie pec croisé',
+  'Push-up', 'Pompes diamant', 'Pompes larges',
+
+  // Dos
+  'Traction', 'Pull-up', 'Chin-up', 'Lat pulldown', 'Lat pulldown prise serrée',
+  'Rowing barre', 'Rowing haltère', 'Seated row', 'Rowing câble', 'Rowing machine',
+  'Soulevé de terre', 'Deadlift roumain', 'Romanian Deadlift', 'Soulevé de terre sumo',
+  'Face pull', 'Shrugs barre', 'Shrugs haltères', 'Good morning',
+  'Pull-over haltère', 'Pull-over câble', 'T-bar row',
+
+  // Épaules
+  'Développé militaire', 'Développé militaire haltères', 'Développé Arnold',
+  'Élévation latérale', 'Élévation latérale câble', 'Élévation frontale',
+  'Oiseau haltères', 'Reverse pec deck', 'Upright row', 'Tirage menton',
+
+  // Biceps
+  'Curl biceps barre', 'Curl biceps haltères', 'Curl marteau', 'Curl concentré',
+  'Curl incliné', 'Curl câble', 'Curl pupitre', 'Curl barre EZ',
+  'Curl Zottman', 'Curl prise neutre',
+
+  // Triceps
+  'Triceps poulie haute', 'Triceps poulie basse', 'Extension triceps barre',
+  'Extension triceps haltère', 'Kickback triceps', 'Dips triceps', 'Barre front',
+  'Skull crusher', 'Close grip bench press', 'Diamond push-up',
+
+  // Jambes
+  'Squat', 'Squat goblet', 'Squat bulgare', 'Squat avant', 'Front squat',
+  'Leg press', 'Hack squat', 'Hip thrust', 'Fentes marchées', 'Fentes statiques',
+  'Leg curl couché', 'Leg curl assis', 'Leg extension', 'Adducteur machine',
+  'Abducteur machine', 'Calf raise debout', 'Calf raise assis', 'Donkey calf raise',
+  'Good morning jambes', 'Step up', 'Box squat',
+
+  // Fessiers
+  'Hip thrust barre', 'Hip thrust haltère', 'Glute bridge', 'Cable kickback',
+  'Abducteur câble', 'Squat sumo',
+
+  // Abdominaux
+  'Gainage', 'Gainage latéral', 'Crunch', 'Crunch cable', 'Relevé de jambes',
+  'Russian twist', 'Bicycle crunch', 'Mountain climber', 'Hollow body',
+  'Ab wheel', 'Planche', 'Dragon flag', 'Toes to bar', 'Hanging leg raise',
+  'Decline crunch', 'Woodchop câble',
+
+  // Cardio / Fonctionnel
+  'Burpees', 'Box jump', 'Kettlebell swing', 'Kettlebell snatch', 'Kettlebell clean',
+  'Thruster', 'Clean & jerk', 'Snatch', 'Turkish get-up',
+  'Saut à la corde', 'Rameur', 'Vélo elliptique', 'Tapis roulant', 'Assault bike',
+  'Wall ball', 'Battle rope', 'Sled push', 'Farmer walk',
+
+  // Haltérophilie
+  'Épaulé-jeté', 'Arraché', 'Squat de puissance', 'Soulevé de terre puissance',
+  'Développé couché puissance', 'Bench press paused'
 ];
 
 function loadDB() {
